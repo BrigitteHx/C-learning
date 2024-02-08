@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\brigi\\source\\repos\\C-learning\\testing\\testing\\testing.csproj",
-      "projectName": "testing",
-      "projectPath": "C:\\Users\\brigi\\source\\repos\\C-learning\\testing\\testing\\testing.csproj",
+      "projectUniqueName": "C:\\Users\\brigi\\Jaar2Softwaredevelopment\\source\\repos\\Leerpad1\\Leerpad1\\Leerpad1.csproj",
+      "projectName": "Leerpad1",
+      "projectPath": "C:\\Users\\brigi\\Jaar2Softwaredevelopment\\source\\repos\\Leerpad1\\Leerpad1\\Leerpad1.csproj",
       "packagesPath": "C:\\Users\\brigi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\brigi\\source\\repos\\C-learning\\testing\\testing\\obj\\",
+      "outputPath": "C:\\Users\\brigi\\Jaar2Softwaredevelopment\\source\\repos\\Leerpad1\\Leerpad1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
