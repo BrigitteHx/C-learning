@@ -18,13 +18,24 @@ class Program
             Trainer trainer2 = new Trainer(trainer2Name);
             Console.WriteLine("\n");
 
-            for (int i = 0; i < 6; i++)
+            // apart 2 voor Bulbasaurs, 2 Charmanders, 2 Squirtles voor elk trainer
+            for (int i = 0; i < 2; i++)
             {
-                Charmander charmander = new Charmander($"Charmander{i + 1}", "Fire", "Water");
-                Pokeball pokeball1 = new Pokeball(charmander);
-                Pokeball pokeball2 = new Pokeball(charmander);
+                Bulbasaur bulb = new Bulbasaur($"Bulbasaur{i + 1}");
+                Charmander charm = new Charmander($"Charmander{i + 1}");
+                Squirtle squi = new Squirtle($"Squirtle{i + 1}");
+
+                Pokeball pokeball1 = new Pokeball(bulb);
+                Pokeball pokeball2 = new Pokeball(charm);
+                Pokeball pokeball3 = new Pokeball(squi);
+
                 trainer1.AddPokeball(pokeball1);
+                trainer1.AddPokeball(pokeball2);
+                trainer1.AddPokeball(pokeball3);
+
+                trainer2.AddPokeball(pokeball1);
                 trainer2.AddPokeball(pokeball2);
+                trainer2.AddPokeball(pokeball3);
             }
 
             for (int i = 0; i < 6; i++)

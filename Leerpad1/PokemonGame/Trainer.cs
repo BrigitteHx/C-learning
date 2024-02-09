@@ -36,6 +36,6 @@ public class Trainer
         {
             throw new IndexOutOfRangeException("Invalid pokeball index.");
         }
-        belt[index].ReturnCharmander();
+        belt[index].ReturnPokemon();
     }
 }

@@ -3,24 +3,24 @@
 public class Pokeball
 {
     private bool isOpen;
-    private Charmander charmander;
+    private Pokemon pokemon;
 
-    public Pokeball(Charmander charmander)
+    public Pokeball(Pokemon pokemon)
     {
-        this.charmander = charmander;
+        this.pokemon = pokemon;
         this.isOpen = false;
     }
 
     public void ThrowPokeball()
     {
-        Console.WriteLine("The pokeball releases Charmander!");
-        charmander.BattleCryShout();
+        Console.WriteLine("The pokeball releases the Pokémon!");
+        pokemon.BattleCryShout();
         isOpen = true;
     }
 
-    public void ReturnCharmander()
+    public void ReturnPokemon()
     {
-        Console.WriteLine("Charmander returns to the pokeball.");
+        Console.WriteLine("The Pokémon returns to the pokeball.");
         isOpen = false;
     }
 
