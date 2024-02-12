@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 
 public class Battle
 {
@@ -49,31 +48,14 @@ public class Battle
         return Fight(pokemon1, pokemon2);
     }
 
-
     private static string Fight(Pokemon pokemon1, Pokemon pokemon2)
     {
-        if (IsStrongAgainst(pokemon1.Type, pokemon2.Type))
+        if (pokemon1.Strength == pokemon2.Weakness)
             return $"{pokemon1.Nickname} wins!";
-        else if (IsStrongAgainst(pokemon2.Type, pokemon1.Type))
+        else if (pokemon1.Weakness == pokemon2.Strength)
             return $"{pokemon2.Nickname} wins!";
         else
             return "It's a draw!";
     }
-
-    private static bool IsStrongAgainst(PokemonType attackingType, PokemonType defendingType)
-    {
-        switch (attackingType)
-        {
-            case PokemonType.Fire:
-                return defendingType == PokemonType.Grass;
-            case PokemonType.Water:
-                return defendingType == PokemonType.Fire;
-            case PokemonType.Grass:
-                return defendingType == PokemonType.Water;
-            default:
-                return false; // rest zal neutraal moeten zijn 
-        }
-    }
-
 
 }

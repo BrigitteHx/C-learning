@@ -35,4 +35,3 @@ public class Trainer
         return belt[index];
     }
 }
-

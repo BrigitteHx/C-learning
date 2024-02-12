@@ -30,17 +30,12 @@ public class Arena
 
     public static void UpdateScoreboard(Trainer winner, Trainer trainer1, Trainer trainer2)
     {
-        if (winner != null)
-        {
-            if (winner == trainer1)
-                trainer1Wins++;
-            else if (winner == trainer2)
-                trainer2Wins++;
-        }
+        if (winner == trainer1)
+            trainer1Wins++;
+        else if (winner == trainer2)
+            trainer2Wins++;
         else
-        {
             draws++;
-        }
     }
 
     public static void UpdateBattleCount()
