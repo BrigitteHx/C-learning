@@ -27,11 +27,17 @@ class Arena
         drawsCount += draws;
     }
 
-    public static void DisplayScoreboard()
+    public static void DisplayScoreboard(string trainer1Name, string trainer2Name)
     {
-        Console.WriteLine($"\nBattle rounds: {roundsCount}");
+        Console.WriteLine(" ");
+        Console.WriteLine("* ---------- * Scoreboard * ---------- *");
+        Console.WriteLine($"Battle rounds: {roundsCount}");
         Console.WriteLine($"Battles fought: {battlesCount}");
-        Console.WriteLine($"Wins {trainer1WinsCount} : {trainer2WinsCount} : Draws {drawsCount}");
+        Console.WriteLine($"Wins {trainer1Name}: {trainer1WinsCount}");
+        Console.WriteLine($"Wins {trainer2Name}: {trainer2WinsCount}");
+        Console.WriteLine($"Draws: {drawsCount}");
+        Console.WriteLine("* ---------------------------------------- *");
+        Console.WriteLine(" ");
     }
 
     public static void StartBattle(Trainer trainer1, Trainer trainer2)
@@ -48,7 +54,7 @@ class Arena
         }
 
         Console.WriteLine("\nBattle has ended.");
-        DisplayScoreboard();
+        DisplayScoreboard(trainer1.Name, trainer2.Name);
     }
 
     public static void PrepareTrainers(Trainer trainer1, Trainer trainer2)
