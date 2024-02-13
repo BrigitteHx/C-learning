@@ -1,38 +1,10 @@
-﻿using System;
+﻿// Battle.cs
+
+using System;
 
 public class Battle
 {
     private static Random random = new Random();
-    private const int MaxRounds = 10;
-
-    public static void StartBattle(Trainer trainer1, Trainer trainer2)
-    {
-        Arena.UpdateBattleCount();
-
-        for (int roundsFought = 1; roundsFought <= MaxRounds; roundsFought++)
-        {
-            Arena.UpdateRoundCount();
-            Console.WriteLine($"\nRound {roundsFought} begins!");
-
-            string outcome = StartRound(trainer1, trainer2);
-            Console.WriteLine($"Round {roundsFought} outcome: {outcome}");
-
-            if (outcome.Contains("wins"))
-            {
-                Trainer winner = outcome.Split(' ')[0] == trainer1.Name ? trainer1 : trainer2;
-                Arena.UpdateScoreboard(winner, trainer1, trainer2);
-                if (trainer1.Belt.Count == 0 || trainer2.Belt.Count == 0)
-                    break;
-            }
-            else
-            {
-                Arena.UpdateScoreboard(null, trainer1, trainer2);
-            }
-        }
-
-        Console.WriteLine("\nBattle has ended.");
-        Arena.DisplayScoreboard();
-    }
 
     public static string StartRound(Trainer trainer1, Trainer trainer2)
     {
@@ -45,17 +17,38 @@ public class Battle
         Console.WriteLine($"{trainer1.Name} sends out {pokemon1.Nickname} ({pokemon1.Strength})");
         Console.WriteLine($"{trainer2.Name} sends out {pokemon2.Nickname} ({pokemon2.Strength})");
 
-        return Fight(pokemon1, pokemon2);
+        int trainer1Wins, trainer2Wins, draws;
+        string outcome = Fight(pokemon1, pokemon2, out trainer1Wins, out trainer2Wins, out draws);
+
+        Arena.UpdateScoreboard(trainer1Wins, trainer2Wins, draws);
+
+        return outcome;
     }
 
-    private static string Fight(Pokemon pokemon1, Pokemon pokemon2)
+    private static string Fight(Pokemon pokemon1, Pokemon pokemon2, out int trainer1Wins, out int trainer2Wins, out int draws)
     {
-        if (pokemon1.Strength == pokemon2.Weakness)
-            return $"{pokemon1.Nickname} wins!";
-        else if (pokemon1.Weakness == pokemon2.Strength)
-            return $"{pokemon2.Nickname} wins!";
-        else
-            return "It's a draw!";
-    }
+        trainer1Wins = 0;
+        trainer2Wins = 0;
+        draws = 0;
 
+        if ((pokemon1.Strength == "Fire" && pokemon2.Strength == "Grass") ||
+            (pokemon1.Strength == "Grass" && pokemon2.Strength == "Water") ||
+            (pokemon1.Strength == "Water" && pokemon2.Strength == "Fire"))
+        {
+            trainer1Wins = 1;
+            return $"{pokemon1.Nickname} wins!";
+        }
+        else if ((pokemon1.Strength == "Grass" && pokemon2.Strength == "Fire") ||
+                 (pokemon1.Strength == "Water" && pokemon2.Strength == "Grass") ||
+                 (pokemon1.Strength == "Fire" && pokemon2.Strength == "Water"))
+        {
+            trainer2Wins = 1;
+            return $"{pokemon2.Nickname} wins!";
+        }
+        else
+        {
+            draws = 1;
+            return "It's a draw!";
+        }
+    }
 }

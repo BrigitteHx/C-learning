@@ -1,50 +1,75 @@
-﻿using System;
+﻿// Arena.cs
 
-public class Arena
+using System;
+
+class Arena
 {
-    private static int roundsFought = 0;
-    private static int battlesFought = 0;
-    private static int trainer1Wins = 0;
-    private static int trainer2Wins = 0;
-    private static int draws = 0;
-
-    public static int Trainer1Wins { get { return trainer1Wins; } }
-    public static int Trainer2Wins { get { return trainer2Wins; } }
-    public static int Draws { get { return draws; } }
-
-    public static void StartBattle(Trainer trainer1, Trainer trainer2)
-    {
-        Battle.StartBattle(trainer1, trainer2);
-    }
-
-    public static void DisplayScoreboard()
-    {
-        Console.WriteLine("\n===== Scoreboard =====");
-        Console.WriteLine($"Battles fought: {battlesFought}");
-        Console.WriteLine($"Rounds fought: {roundsFought}");
-        Console.WriteLine($"Trainer 1 wins: {trainer1Wins}");
-        Console.WriteLine($"Trainer 2 wins: {trainer2Wins}");
-        Console.WriteLine($"Draws: {draws}");
-        Console.WriteLine("======================");
-    }
-
-    public static void UpdateScoreboard(Trainer winner, Trainer trainer1, Trainer trainer2)
-    {
-        if (winner == trainer1)
-            trainer1Wins++;
-        else if (winner == trainer2)
-            trainer2Wins++;
-        else
-            draws++;
-    }
+    private static int battlesCount = 0;
+    private static int roundsCount = 0;
+    private static int trainer1WinsCount = 0;
+    private static int trainer2WinsCount = 0;
+    private static int drawsCount = 0;
 
     public static void UpdateBattleCount()
     {
-        battlesFought++;
+        battlesCount++;
     }
 
     public static void UpdateRoundCount()
     {
-        roundsFought++;
+        roundsCount++;
+    }
+
+    public static void UpdateScoreboard(int trainer1Wins, int trainer2Wins, int draws)
+    {
+        trainer1WinsCount += trainer1Wins;
+        trainer2WinsCount += trainer2Wins;
+        drawsCount += draws;
+    }
+
+    public static void DisplayScoreboard()
+    {
+        Console.WriteLine($"\nBattle rounds: {roundsCount}");
+        Console.WriteLine($"Battles fought: {battlesCount}");
+        Console.WriteLine($"Wins {trainer1WinsCount} : {trainer2WinsCount} : Draws {drawsCount}");
+    }
+
+    public static void StartBattle(Trainer trainer1, Trainer trainer2)
+    {
+        UpdateBattleCount();
+
+        for (int roundsFought = 1; roundsFought <= 10; roundsFought++)
+        {
+            UpdateRoundCount();
+            Console.WriteLine($"\nRound {roundsFought} begins!");
+
+            string outcome = Battle.StartRound(trainer1, trainer2);
+            Console.WriteLine($"Round {roundsFought} outcome: {outcome}");
+        }
+
+        Console.WriteLine("\nBattle has ended.");
+        DisplayScoreboard();
+    }
+
+    public static void PrepareTrainers(Trainer trainer1, Trainer trainer2)
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            Bulbasaur bulb1 = new Bulbasaur($"Bulbasaur{i + 1}");
+            Charmander charm1 = new Charmander($"Charmander{i + 1}");
+            Squirtle squi1 = new Squirtle($"Squirtle{i + 1}");
+
+            trainer1.AddPokeball(new Pokeball(bulb1));
+            trainer1.AddPokeball(new Pokeball(charm1));
+            trainer1.AddPokeball(new Pokeball(squi1));
+
+            Bulbasaur bulb2 = new Bulbasaur($"Bulbasaur{i + 1}");
+            Charmander charm2 = new Charmander($"Charmander{i + 1}");
+            Squirtle squi2 = new Squirtle($"Squirtle{i + 1}");
+
+            trainer2.AddPokeball(new Pokeball(bulb2));
+            trainer2.AddPokeball(new Pokeball(charm2));
+            trainer2.AddPokeball(new Pokeball(squi2));
+        }
     }
 }
