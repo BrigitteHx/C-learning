@@ -2,12 +2,12 @@
 
 public class Charmander : Pokemon
 {
-    public Charmander(string nickname) : base(nickname, "Fire", "Water")
+    public Charmander(string nickname) : base(nickname, PokemonType.Fire, PokemonType.Water)
     {
     }
 
     public override void BattleCryShout()
     {
-        Console.WriteLine($"{nickname}: Charmander powerrr!");
+        Console.WriteLine($"{Nickname}: Charmander powerrr!");
     }
 }

@@ -1,6 +1,4 @@
-﻿// Arena.cs
-
-using System;
+﻿using System;
 
 class Arena
 {

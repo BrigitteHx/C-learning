@@ -1,14 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public class Trainer
+public sealed class Trainer
 {
-    private string name;
-    private List<Pokeball> belt;
+    private readonly string name;
+    private readonly List<Pokeball> belt;
+    private const int MaxPokeballs = 6;
 
-    public string Name { get { return name; } }
+    public string Name
+    {
+        get { return name; }
+    }
 
-    public List<Pokeball> Belt { get { return belt; } }
+    public List<Pokeball> Belt
+    {
+        get { return belt; }
+    }
 
     public Trainer(string name)
     {
@@ -18,7 +25,7 @@ public class Trainer
 
     public void AddPokeball(Pokeball pokeball)
     {
-        if (belt.Count >= 6)
+        if (belt.Count >= MaxPokeballs)
         {
             Console.WriteLine("The belt cannot hold more than six pokeballs.");
         }

@@ -1,6 +1,4 @@
-﻿// Battle.cs
-
-using System;
+﻿using System;
 
 public class Battle
 {
@@ -31,16 +29,16 @@ public class Battle
         trainer2Wins = 0;
         draws = 0;
 
-        if ((pokemon1.Strength == "Fire" && pokemon2.Strength == "Grass") ||
-            (pokemon1.Strength == "Grass" && pokemon2.Strength == "Water") ||
-            (pokemon1.Strength == "Water" && pokemon2.Strength == "Fire"))
+        if ((pokemon1.Strength == PokemonType.Fire && pokemon2.Strength == PokemonType.Grass) ||
+            (pokemon1.Strength == PokemonType.Grass && pokemon2.Strength == PokemonType.Water) ||
+            (pokemon1.Strength == PokemonType.Water && pokemon2.Strength == PokemonType.Fire))
         {
             trainer1Wins = 1;
             return $"{pokemon1.Nickname} wins!";
         }
-        else if ((pokemon1.Strength == "Grass" && pokemon2.Strength == "Fire") ||
-                 (pokemon1.Strength == "Water" && pokemon2.Strength == "Grass") ||
-                 (pokemon1.Strength == "Fire" && pokemon2.Strength == "Water"))
+        else if ((pokemon1.Strength == PokemonType.Grass && pokemon2.Strength == PokemonType.Fire) ||
+                 (pokemon1.Strength == PokemonType.Water && pokemon2.Strength == PokemonType.Grass) ||
+                 (pokemon1.Strength == PokemonType.Fire && pokemon2.Strength == PokemonType.Water))
         {
             trainer2Wins = 1;
             return $"{pokemon2.Nickname} wins!";

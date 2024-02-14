@@ -2,12 +2,12 @@
 
 public class Bulbasaur : Pokemon
 {
-    public Bulbasaur(string nickname) : base(nickname, "Grass", "Fire")
+    public Bulbasaur(string nickname) : base(nickname, PokemonType.Grass, PokemonType.Fire)
     {
     }
 
     public override void BattleCryShout()
     {
-        Console.WriteLine($"{nickname}: Bulba-saur!");
+        Console.WriteLine($"{Nickname}: Bulba-saur!");
     }
 }
