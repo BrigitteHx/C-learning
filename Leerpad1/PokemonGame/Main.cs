@@ -1,6 +1,4 @@
-﻿// Program.cs
-
-using System;
+﻿using System;
 
 class Program
 {
@@ -11,12 +9,12 @@ class Program
         {
             Console.WriteLine("Welcome to the Pokemon battle simulator!");
             Console.WriteLine("Enter a name for the first trainer:");
-            string trainer1Name = Console.ReadLine();
-            Trainer trainer1 = new Trainer(trainer1Name);
+            string? trainer1Name = Console.ReadLine(); 
+            Trainer trainer1 = new Trainer(trainer1Name ?? "DefaultName"); 
 
             Console.WriteLine("Enter a name for the second trainer:");
-            string trainer2Name = Console.ReadLine();
-            Trainer trainer2 = new Trainer(trainer2Name);
+            string? trainer2Name = Console.ReadLine(); 
+            Trainer trainer2 = new Trainer(trainer2Name ?? "DefaultName"); 
             Console.WriteLine();
 
             Arena.PrepareTrainers(trainer1, trainer2);
@@ -24,7 +22,7 @@ class Program
             Arena.StartBattle(trainer1, trainer2);
 
             Console.WriteLine("Do you want to play again? (yes/no)");
-            string choice = Console.ReadLine();
+            string choice = Console.ReadLine() ?? ""; 
             if (choice.ToLower() != "yes")
             {
                 playAgain = false;

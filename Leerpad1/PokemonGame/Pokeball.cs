@@ -1,7 +1,9 @@
-﻿public class Pokeball
+﻿using System;
+
+public class Pokeball
 {
     private bool isOpen;
-    private Pokemon pokemon;
+    private Pokemon pokemon = null!;
 
     public bool IsOpen
     {
@@ -19,12 +21,8 @@
     {
         this.Pokemon = pokemon;
         this.IsOpen = false;
-    }
-
-    public void ThrowPokeball()
-    {
         Console.WriteLine("The pokeball releases the Pokémon!");
-        Pokemon.BattleCryShout();
+        pokemon.BattleCryShout(); 
         IsOpen = true;
     }
 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Leerpad1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea83f9b22b6d0c51da90f93075a3a9e73aff1ffe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f77b4b6ed83df5e0fd5d4d3c35cfc7910ce4a737")]
 [assembly: System.Reflection.AssemblyProductAttribute("Leerpad1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Leerpad1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

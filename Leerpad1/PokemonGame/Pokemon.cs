@@ -1,8 +1,15 @@
-﻿using System;
+﻿using System; 
+
+public enum PokemonType
+{
+    Fire,
+    Grass,
+    Water
+}
 
 public class Pokemon
 {
-    private string nickname;
+    private string nickname = null!;
     private PokemonType strength;
     private PokemonType weakness;
 
@@ -35,11 +42,9 @@ public class Pokemon
     {
         return $"{Nickname} (Strength: {Strength}, Weakness: {Weakness})";
     }
-}
 
-public enum PokemonType
-{
-    Fire,
-    Grass,
-    Water
+    public virtual void BattleCryShout()
+    {
+        // empty so no overriden
+    }
 }
