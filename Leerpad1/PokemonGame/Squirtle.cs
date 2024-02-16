@@ -2,12 +2,12 @@
 
 public class Squirtle : Pokemon
 {
-    public Squirtle(string nickname) : base(nickname, "Water", "Grass")
+    public Squirtle(string nickname) : base(nickname, PokemonType.Water, PokemonType.Grass)
     {
     }
 
     public override void BattleCryShout()
     {
-        Console.WriteLine($"{nickname}: Squirtle Squirtle!");
+        Console.WriteLine($"{Nickname}: Squirtle Squirtle!");
     }
 }
