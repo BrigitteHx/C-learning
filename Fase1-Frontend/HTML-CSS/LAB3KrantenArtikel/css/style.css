@@ -1,0 +1,35 @@
+body {
+    background-color: lightblue;
+    padding: 5px;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px; 
+    border: 5px solid black; /* kader */
+}
+
+h1 {
+    color: black;
+}
+
+p {
+    color: black;
+}
+
+img {
+    border: 2px solid black;
+    margin: 10px;
+}
+
+.float-left {
+    float: left;
+    margin-right: 20px;
+}
+
+.float-right {
+    float: right;
+    margin-left: 20px;
+}
