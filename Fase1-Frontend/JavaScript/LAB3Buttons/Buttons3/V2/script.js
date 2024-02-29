@@ -47,5 +47,5 @@ function createButton(number) {
         }
         this.dataset.clicks = currentClicks + 1; 
     });
-    return button;
+    return button; // return value
 }
