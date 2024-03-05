@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fase1-OOP", "Fase1-OOP", "{656E773E-80F5-4CDF-975D-2B9FE6320D12}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Leerpad1", "Fase1-OOP\PokemonGame\Leerpad1.csproj", "{7398BEE6-D271-4139-88F6-DCEB23C2C5A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{0D77556D-3A50-4462-9FEF-AA2ABCD051EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "repos", "repos", "{ED610E1D-D3B0-49F5-B00E-FABF91DC1C60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "C-learning", "C-learning", "{BEF597BA-0A46-479B-9FC8-0263B9C0CD15}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Leerpad1", "Leerpad1", "{98998C57-8828-4DF9-99B6-8A0BD91ABA09}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Leerpad1", "source\repos\C-learning\Leerpad1\PokemonGame\Leerpad1.csproj", "{8EDABA05-F19E-4752-914D-099252DDE9D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7398BEE6-D271-4139-88F6-DCEB23C2C5A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7398BEE6-D271-4139-88F6-DCEB23C2C5A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7398BEE6-D271-4139-88F6-DCEB23C2C5A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7398BEE6-D271-4139-88F6-DCEB23C2C5A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EDABA05-F19E-4752-914D-099252DDE9D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EDABA05-F19E-4752-914D-099252DDE9D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EDABA05-F19E-4752-914D-099252DDE9D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EDABA05-F19E-4752-914D-099252DDE9D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7398BEE6-D271-4139-88F6-DCEB23C2C5A3} = {656E773E-80F5-4CDF-975D-2B9FE6320D12}
+		{ED610E1D-D3B0-49F5-B00E-FABF91DC1C60} = {0D77556D-3A50-4462-9FEF-AA2ABCD051EE}
+		{BEF597BA-0A46-479B-9FC8-0263B9C0CD15} = {ED610E1D-D3B0-49F5-B00E-FABF91DC1C60}
+		{98998C57-8828-4DF9-99B6-8A0BD91ABA09} = {BEF597BA-0A46-479B-9FC8-0263B9C0CD15}
+		{8EDABA05-F19E-4752-914D-099252DDE9D9} = {98998C57-8828-4DF9-99B6-8A0BD91ABA09}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92CA06B9-AD30-4633-A75D-AE033D18F137}
+	EndGlobalSection
+EndGlobal

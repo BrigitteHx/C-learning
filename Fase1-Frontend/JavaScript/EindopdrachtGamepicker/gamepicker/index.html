@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>Gamepicker</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header__overview">
+                <select name="filter-genre" id="filter-genre" onchange="filter()">
+                    <option value="" selected>Alle Genres</option>
+                </select>
+                <select name="filter-rating" id="filter-rating" onchange="filter()">
+                    <option value="" selected>Alle Ratings</option>
+                    <option value="1">1</option>
+                    <option value="2">2 </option>
+                    <option value="3">3 </option>
+                    <option value="4">4 </option>
+                    <option value="5">5 </option>
+                  </select>
+                <input type="text" name="filter-price" id="filter-price" placeholder="Prijs" onchange="filter()">
+            </div>
+            <div class="header__cart">
+                <h2>Cart</h2>
+                <button id="clear-button" onclick="clearCart()">Clear Alles</button>
+                <button id="back-button" onclick="hideAndShow()">Terug</button>
+            </div>
+            <div class="header__home">
+                <button id="home-button" onclick="navigateToPage('../index.html')">Home</button>
+            </div>
+        </header>
+        <main>
+            <div class="container__overview">
+                <ul class="list-items"></ul>
+                <p class="overview-empty-text">Geen games matchen deze filter</p>
+                <div class="container__overview-button">
+                    <button onclick="calculate()">Winkel Wagen</button>
+                </div>
+            </div>
+            <div class="container__cart">
+                <ul class="cart-items"></ul>
+                <p class="cart-empty-text">Wagen is leeg</p>
+                <div class="container__cart-button">
+                    <button id="total-button">Totaal</button>
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>
