@@ -5,8 +5,8 @@ from lingoFunctions import *
 def main():
     while True:
         titleScreen()
-        playAgain = input("Wil je nog een ronde spelen? (ja/nee): ").lower()
-        if playAgain.lower() != "ja":
+        playAgain = input("Would you like to play another round (yes/no): ").lower()
+        if playAgain.lower() != "yes":
             break
 
 main()
