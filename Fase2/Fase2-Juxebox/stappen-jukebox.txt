@@ -1,0 +1,26 @@
+1) laravel jukebox project
+2) database jukebox project
+	- migrations tabellen maken
+	- seeders halen tabellen
+3) bevat 5 genres zichtbaar op de localhost/jukebox (later worden dit de genres waar de gebruiker uit kan kiezen en waar songs onder staan) 
+	- genres migration 
+	- genres seeders
+	- genre model
+	- genre controller-index
+	- genre view-index
+4) song overzicht per genre (wanneer een genre is aangeklikt ziet de gebruiker alle liedjes voor dit genre (let op: dit hoeven geen echte nummers te zijn, deze mogen met de fake() optie worden gegenereed en alleen als telst worden weergegeven)) 
+	- songs migration
+	- songs seeders
+	- songs model
+	- songs controller-index
+	- songs view-index
+5) song details (wanneer song aangeklikt moeten de details met een pop up worden getoond, ook deze mogen met de fake() option worden ingevoerd)
+6) bezoeker kan zonder inloggen song toevoegen aan playlist
+	- playlist wordt maar tijdelijk behouden (via een session)
+	- kies ervoor om een tussen laag in te bouwen voor de session (bijv. session manager) zodat alleen deze met de database communiceert
+	- alle functionaliteiten moeten in 1 class worden gezet met een kleine interface
+7) liedje kan worden verwijderd uit playlist
+8) totale duur van de playlist moet worden weergegeven 
+9) bezoeker moet zich ook kunnen aanmelden als bezoeker
+10) de aangemelde bezoeker kan een aangemaakte playlist opslaan met naam & deze later weer herbruiken (deze wordt niet na een session verwijderd
+11) de aangemelde bezoeker kan een overzicht van alle opgeslagen playlists bekijken en beheren (playlists verwijderen)
