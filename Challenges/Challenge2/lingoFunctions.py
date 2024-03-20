@@ -100,11 +100,11 @@ def lingo():
         resultGuess = [""] * len(guess)
 
         if len(guess) != 5:
-            print(colors.RED + "Incorrect enter, your word has to be 5 letters long. Try again!" + colors.RESET)
+            print(colors.RED + "Incorrect enter, your word has to be 5 letters long. Try again!\n" + colors.RESET)
             continue
 
         if guess == chosenWord:
-            print(colors.GREEN + "Congrats, that is correct! You guessed the word." + colors.RESET)
+            print(colors.GREEN + "Congrats, that is correct! You guessed the word.\n" + colors.RESET)
             break
 
         # wanneer letter in woord & op juiste plek:
