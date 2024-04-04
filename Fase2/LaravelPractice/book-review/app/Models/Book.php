@@ -40,27 +40,28 @@ class Book extends Model
         return $query->having('reviews_count', '>=', $minReviews);
     }
 
-    // private function dateRangeFilter(Builder $query, $from = null, $to = null)
-    // {
-    //     return $query->withRecentReviews(fn($date) => $date->subWeek());
-    //     if ($from && !$to) {
-    //         $query->where('created_at', '>=', $from);
-    //     } elseif (!$from && $to) {
-    //         $query->where('created_at', '<=', $to);
-    //     } elseif ($from && $to) {
-    //         $query->whereBetween('created_at', [$from, $to]);
-    //     }
-    // }
-
     private function dateRangeFilter(Builder $query, $from = null, $to = null)
     {
+        return $query->withRecentReviews(fn($date) => $date->subWeek());
         if ($from && !$to) {
-            $query->whereDate('created_at', '>=', $from);
+            $query->where('created_at', '>=', $from);
         } elseif (!$from && $to) {
-            $query->whereDate('created_at', '<=', $to);
+            $query->where('created_at', '<=', $to);
         } elseif ($from && $to) {
             $query->whereBetween('created_at', [$from, $to]);
         }
-        return $query;
     }
+
+//     private function dateRangeFilter(Builder $query, $from = null, $to = null)
+//     {
+//         if ($from && !$to) {
+//             $query->whereDate('created_at', '>=', $from);
+//         } elseif (!$from && $to) {
+//             $query->whereDate('created_at', '<=', $to);
+//         } elseif ($from && $to) {
+//             $query->whereBetween('created_at', [$from, $to]);
+//         }
+//         return $query;
+//     }
+
 }
