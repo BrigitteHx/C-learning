@@ -1,19 +1,29 @@
 <?php
+
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\EventResource;
+use App\Http\Traits\CanLoadRelationships;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+    use CanLoadRelationships;
+
+    private array $relations = ['user', 'attendees', 'attendees.user'];
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return EventResource::collection(Event::with('user')->get());
+        $query = $this->loadRelationships(Event::query());
+
+        return EventResource::collection(
+            $query->latest()->paginate()
+        );
     }
 
     /**
@@ -31,7 +41,7 @@ class EventController extends Controller
             'user_id' => 1
         ]);
 
-        return $event;
+        return new EventResource($this->loadRelationships($event));
     }
 
     /**
@@ -39,9 +49,9 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        $event->load('user', 'attendees');
-        return new EventResource($event);
+        return new EventResource($this->loadRelationships($event));
     }
+
     /**
      * Update the specified resource in storage.
      */
@@ -56,8 +66,9 @@ class EventController extends Controller
             ])
         );
 
-        return new EventResource($event);
+        return new EventResource($this->loadRelationships($event));
     }
+
     /**
      * Remove the specified resource from storage.
      */
@@ -65,10 +76,6 @@ class EventController extends Controller
     {
         $event->delete();
 
-        return response(status: 204); // error -> no content found 
-
-        // return response()->json([
-        //     'message'=> 'Event deleted succesfully'
-        // ]);
+        return response(status: 204);
     }
 }
