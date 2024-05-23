@@ -1,0 +1,45 @@
+DISTINCT vragen:
+SELECT DISTINCT `type` FROM `animal`; (Welke verschillende dieren bestaan)
+SELECT DISTINCT `profession` FROM `npc`; (Welke professions zijn er bij de NPCs)
+
+AND, OR and NOT vragen:
+SELECT * FROM `creature` WHERE `name` = 'Killer Bee' OR `name` = 'Orc'; (Creatures die voldoen aan 'Killer Bee' of 'Orc')
+SELECT * FROM `animal` WHERE `speed` = 6 AND `defense` = 5; (Dieren met snelheid 6 en verdediging 5)
+SELECT * FROM `animal` WHERE `type` != 'schaap'; (Alle dieren behalve schapen)
+SELECT COUNT(*) FROM `animal` WHERE `type` IN ('Wolf', 'Bear', 'Eagle'); (Aantal dieren die voldoen aan 'Wolf', 'Bear' of 'Eagle')
+SELECT * FROM `person` WHERE `attack` = 10 AND `defense` = 10 AND `agility` = 10; (Personen met attack, defense en agility allemaal gelijk aan 10)
+SELECT * FROM `city` WHERE `region` IN (1, 2); (Steden in regio 1 of 2)
+SELECT * FROM `hero` WHERE `intelligence` NOT IN (30, 90); (Alle hero's met intelligence anders dan 30 of 90)
+
+MIN and MAX vragen:
+SELECT MIN(`speed`) FROM `animal`; (Minimale snelheid van dieren)
+SELECT MAX(`speed`) FROM `animal`; (Snelheid van het snelste dier)
+SELECT MIN(`attack`) FROM `weapon`; (Minimale attack van een wapen)
+SELECT MAX(`price`) FROM `weapon`; (Duurste wapen kosten)
+
+IN vragen:
+SELECT * FROM `creature` WHERE `name` IN ('Killer Bee', 'Orc'); (Creatures die voldoen aan 'Killer Bee' of 'Orc')
+SELECT `type` FROM `animal` WHERE `type` IN ('Wolf', 'Bear', 'Eagle') ORDER BY `type` ASC; (Namen van dieren gesorteerd op alfabet die voldoen aan 'Wolf', 'Bear' of 'Eagle')
+SELECT * FROM `creature` WHERE `name` NOT IN ('Killer Bee', 'Orc'); (Alle creatures behalve 'Killer Bee' en 'Orc')
+SELECT `name` FROM `city` WHERE `region` IN ('South Groval', 'North Groval') ORDER BY `name` ASC; (Namen van steden in regio South Groval of North Groval gesorteerd op alfabet)
+SELECT COUNT(*) FROM `city` WHERE `region` IN ('South Groval', 'North Groval'); (Aantal steden binnen regio South Groval of North Groval)
+
+BETWEEN and SQL operators vragen:
+SELECT * FROM `weapon` WHERE `price` BETWEEN 100 AND 1000; (Wapens met een prijs van 100 - 1000)
+SELECT * FROM `weapon` WHERE `attack` BETWEEN 300 AND 600; (Wapens met een attack van 300 - 600)
+SELECT COUNT(*) FROM `animal` WHERE `defense` BETWEEN 7 AND 9; (Aantal dieren met defense van 7 - 9)
+SELECT * FROM `person` WHERE `gold` > 1800; (Personen met meer dan 1800 goud)
+SELECT * FROM `person` WHERE `gold` > 1850; (Personen met meer dan 1850 goud)
+SELECT * FROM `person` WHERE `gold` >= 1850; (Personen met 1850 of meer goud)
+SELECT * FROM `weapon` WHERE `price` < 300; (Wapens die minder dan 300 kosten)
+
+LIKE vragen:
+SELECT * FROM `person` WHERE `name` LIKE 'B%'; (Personen die beginnen met de letter B)
+SELECT * FROM `animal` WHERE `type` LIKE '%a%'; (Dieren waar de letter a in zit)
+SELECT * FROM `animal` WHERE `type` LIKE '%e%a%'; (Dieren waar achter de letter e een letter a in zit)
+SELECT * FROM `weapon` WHERE `name` LIKE '%d'; (Wapens die eindigen op de letter d)
+
+TOP, LIMIT or ROWNUM vragen:
+SELECT * FROM `person` LIMIT 10; (Eerste 10 personen)
+SELECT * FROM `weapon` ORDER BY `price` DESC LIMIT 5; (5 duurste wapens)
+SELECT * FROM `weapon` WHERE `attack` BETWEEN 700 AND 900 ORDER BY `attack` DESC LIMIT 3; (Beste 3 wapens met attack tussen 700 en 900)
