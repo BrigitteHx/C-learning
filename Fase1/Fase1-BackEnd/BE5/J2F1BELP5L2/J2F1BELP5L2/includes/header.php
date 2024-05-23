@@ -1,5 +1,10 @@
-<!-- jouw HTML voor een Header komt hier... 
-Gebruik hier tenminste een header afbeelding en een menu
-Zorg dat je in het menu bij elk item een url parameter zet
-om te bepalen welke inhoud er ingeladen moet worden in je html
--->
+<header>
+    <img src="images/client_server.jpg" alt="Header Image">
+    <nav>
+        <ul>
+            <li><a href="index.php?page=mysql">MySQL</a></li>
+            <li><a href="index.php?page=pdo">PHP Data Objects (PDO)</a></li>
+            <li><a href="index.php?page=php">PHP: Hypertext Preprocessor</a></li>
+        </ul>
+    </nav>
+</header>
